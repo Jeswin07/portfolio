@@ -642,11 +642,9 @@
 </body>
 
 <script>
- const form = document.getElementById('form');
+  const form = document.getElementById('form');
 
   form.addEventListener('submit', function (e) {
-    e.preventDefault(); // Stop form for validation first
-
     // Get input values
     const name = document.getElementById('username').value.trim();
     const email = document.getElementById('user-email').value.trim();
@@ -654,10 +652,10 @@
     const message = document.getElementById('message').value.trim();
 
     // RegEx patterns
-    const namePattern = /^[a-zA-Z\s]{3,}$/; // Letters & spaces, min 3 chars
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic email pattern
-    const subjectPattern = /^.{3,}$/; // At least 3 chars
-    const messagePattern = /^.{10,}$/; // At least 10 chars
+    const namePattern = /^[a-zA-Z\s]{3,}$/;
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const subjectPattern = /^.{3,}$/;
+    const messagePattern = /^.{10,}$/;
 
     let errors = [];
 
@@ -678,11 +676,11 @@
     }
 
     if (errors.length > 0) {
+      e.preventDefault(); // Only stop submission on error
       alert(errors.join("\n"));
-    } else {
-      form.submit(); // If valid, submit the form
-    }
-  });
+    }
+    
+  });
 </script>
 
 
