@@ -564,31 +564,35 @@
           </div>
 
           <div class="col-lg-8">
-  <form id="form" action="https://formspree.io/f/manjknpy" method="POST">
-<div class="row gy-4">
+  <form id="form" class="needs-validation" novalidate data-aos="fade-up" data-aos-delay="200" action="https://formspree.io/f/manjknpy" method="POST">
+    <div class="row gy-4">
 
-    <div class="col-md-6">
-      <input type="text" name="name" class="form-control" id="username" placeholder="Your Name" >
+      <div class="col-md-6">
+        <input type="text" name="name" class="form-control" id="username" placeholder="Your Name" required>
+        <div class="invalid-feedback">Please enter your name.</div>
+      </div>
+
+      <div class="col-md-6">
+        <input type="email" class="form-control" id="user-email" name="email" placeholder="Your Email" required>
+        <div class="invalid-feedback">Please enter a valid email address.</div>
+      </div>
+
+      <div class="col-md-12">
+        <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+        <div class="invalid-feedback">Please enter a subject.</div>
+      </div>
+
+      <div class="col-md-12">
+        <textarea class="form-control" id="message" name="message" rows="6" placeholder="Message" required></textarea>
+        <div class="invalid-feedback">Please enter your message.</div>
+      </div>
+
+      <div class="col-md-12 text-center">
+        <button type="submit" class="btn btn-outline-primary">Send Message</button>
+      </div>
+
     </div>
-
-    <div class="col-md-6">
-      <input type="email" class="form-control" id="user-email" name="email" placeholder="Your Email" >
-    </div>
-
-    <div class="col-md-12">
-      <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" >
-    </div>
-
-    <div class="col-md-12">
-      <textarea class="form-control" id="message" name="message" rows="6" placeholder="Message" ></textarea>
-    </div>
-
-    <div class="col-md-12 text-center">
-      <button type="submit" class="btn btn-outline-primary">Send Message</button>
-    </div>
-
-  </div>
-</form>
+  </form>
 </div>
 
 
@@ -642,45 +646,34 @@
 </body>
 
 <script>
-  const form = document.getElementById('form');
+  window.addEventListener('load', function () {
+    const form = document.getElementById('form');
 
-  form.addEventListener('submit', function (e) {
-    // Clear previous errors
-    const name = document.getElementById('username').value.trim();
-    const email = document.getElementById('user-email').value.trim();
-    const subject = document.getElementById('subject').value.trim();
-    const message = document.getElementById('message').value.trim();
+    form.addEventListener('submit', function (event) {
+      // Check for leading spaces
+      const name = document.getElementById('username');
+      const email = document.getElementById('user-email');
+      const subject = document.getElementById('subject');
+      const message = document.getElementById('message');
 
-    // Validation patterns
-    const namePattern = /^[a-zA-Z\s]{3,}$/;
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const subjectPattern = /^.{3,}$/;
-    const messagePattern = /^.{10,}$/;
+      let hasError = false;
 
-    let errors = [];
+      // If any field starts with space, show error and mark invalid
+      [name, email, subject, message].forEach(function (input) {
+        if (input.value.startsWith(' ')) {
+          input.classList.add('is-invalid');
+          hasError = true;
+        }
+      });
 
-    if (!namePattern.test(name)) {
-      errors.push("Name must have at least 3 letters (letters & spaces only).");
-    }
+      // Regular validation check
+      if (!form.checkValidity() || hasError) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
 
-    if (!emailPattern.test(email)) {
-      errors.push("Please enter a valid email address.");
-    }
-
-    if (!subjectPattern.test(subject)) {
-      errors.push("Subject must be at least 3 characters.");
-    }
-
-    if (!messagePattern.test(message)) {
-      errors.push("Message must be at least 10 characters.");
-    }
-
-    // Only stop submission if there's an error
-    if (errors.length > 0) {
-      e.preventDefault(); // stop only if invalid
-      alert(errors.join("\n"));
-    }
-    // If no errors, the form will naturally submit to Formspree
+      form.classList.add('was-validated');
+    });
   });
 </script>
 
