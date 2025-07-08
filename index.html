@@ -564,7 +564,7 @@
           </div>
 
           <div class="col-lg-8">
-  <form id="form" class="needs-validation" novalidate data-aos="fade-up" data-aos-delay="200" action="https://formspree.io/f/manjknpy" method="POST">
+  <form id="form" action="https://formspree.io/f/manjknpy" method="POST">
 <div class="row gy-4">
 
     <div class="col-md-6">
@@ -645,13 +645,13 @@
   const form = document.getElementById('form');
 
   form.addEventListener('submit', function (e) {
-    // Get input values
+    // Clear previous errors
     const name = document.getElementById('username').value.trim();
     const email = document.getElementById('user-email').value.trim();
     const subject = document.getElementById('subject').value.trim();
     const message = document.getElementById('message').value.trim();
 
-    // RegEx patterns
+    // Validation patterns
     const namePattern = /^[a-zA-Z\s]{3,}$/;
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const subjectPattern = /^.{3,}$/;
@@ -675,11 +675,12 @@
       errors.push("Message must be at least 10 characters.");
     }
 
+    // Only stop submission if there's an error
     if (errors.length > 0) {
-      e.preventDefault(); // Only stop submission on error
+      e.preventDefault(); // stop only if invalid
       alert(errors.join("\n"));
     }
-    
+    // If no errors, the form will naturally submit to Formspree
   });
 </script>
 
