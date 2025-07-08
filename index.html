@@ -522,103 +522,6 @@
 
     </section><!-- /Services Section -->
 
-    <!-- Testimonials Section 
-    <section id="testimonials" class="testimonials section">
-
-      
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Testimony</h2>
-        <p>"A highly skilled and dedicated professional who delivers exceptional work with creativity, precision, and a
-          strong commitment to excellence."</p>
-      </div>
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="swiper init-swiper">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              }
-            }
-          </script>
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="row gy-4 justify-content-center">
-                  <div class="col-lg-6">
-                    <div class="testimonial-content">
-                      <p>
-                        <i class="bi bi-quote quote-icon-left"></i>
-                        <span>"Working with <strong>Jaimon</strong> has been an absolute pleasure. Their dedication,
-                          creativity, and
-                          problem-solving abilities truly set them apart. They approach every project with
-                          professionalism and a strong attention to detail, ensuring high-quality results. Whether it's
-                          developing innovative solutions or collaborating with a team, they always bring value and
-                          excellence to the table. I highly recommend them to anyone looking for a skilled and reliable
-                          professional!".</span>
-                        <i class="bi bi-quote quote-icon-right"></i>
-                      </p>
-                      <h3>Adhithya</h3>
-                      <h4>Machine learning Engineer.</h4>
-                      <div class="stars">
-                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                          class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-2 text-center">
-                    <img loading="lazy" src="assets/img/testimonials/Aadhi.jpg"
-                      class="img-fluid testimonial-img rounded-5" alt="">
-                  </div>
-                </div>
-              </div>
-            </div> 
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="row gy-4 justify-content-center">
-                  <div class="col-lg-6">
-                    <div class="testimonial-content">
-                      <p>
-                        <i class="bi bi-quote quote-icon-left"></i>
-                        <span>I have had the privilege of working with <strong>jaimon</strong>, and their passion,
-                          creativity, and
-                          problem-solving mindset are truly remarkable. They are highly skilled, professional, and
-                          always go the extra mile to ensure the best results. Their ability to adapt and deliver
-                          high-quality work makes them an invaluable asset to any team or project</span>
-                        <i class="bi bi-quote quote-icon-right"></i>
-                      </p>
-                      <h3>Hashim Muhammed</h3>
-                      <h4>Developer</h4>
-                      <div class="stars">
-                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                          class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-2 text-center">
-                    <img loading="lazy" src="assets/img/testimonials/Hashim.jpg"
-                      class="img-fluid testimonial-img rounded-5" alt="">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-      </div>
-
-    </section> /Testimonials Section -->
-
     <!-- Contact Section -->
     <section id="contact" class="contact section">
 
@@ -662,34 +565,30 @@
 
           <div class="col-lg-8">
   <form id="form" class="needs-validation" novalidate data-aos="fade-up" data-aos-delay="200" action="https://formspree.io/f/manjknpy" method="POST">
-    <div class="row gy-4">
+<div class="row gy-4">
 
-      <div class="col-md-6">
-        <input type="text" name="name" class="form-control" id="username" placeholder="Your Name" required>
-        <div class="invalid-feedback">Please enter your name.</div>
-      </div>
-
-      <div class="col-md-6">
-        <input type="email" class="form-control" id="user-email" name="email" placeholder="Your Email" required>
-        <div class="invalid-feedback">Please enter a valid email address.</div>
-      </div>
-
-      <div class="col-md-12">
-        <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-        <div class="invalid-feedback">Please enter a subject.</div>
-      </div>
-
-      <div class="col-md-12">
-        <textarea class="form-control" id="message" name="message" rows="6" placeholder="Message" required></textarea>
-        <div class="invalid-feedback">Please enter your message.</div>
-      </div>
-
-      <div class="col-md-12 text-center">
-        <button type="submit" class="btn btn-outline-primary">Send Message</button>
-      </div>
-
+    <div class="col-md-6">
+      <input type="text" name="name" class="form-control" id="username" placeholder="Your Name" >
     </div>
-  </form>
+
+    <div class="col-md-6">
+      <input type="email" class="form-control" id="user-email" name="email" placeholder="Your Email" >
+    </div>
+
+    <div class="col-md-12">
+      <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" >
+    </div>
+
+    <div class="col-md-12">
+      <textarea class="form-control" id="message" name="message" rows="6" placeholder="Message" ></textarea>
+    </div>
+
+    <div class="col-md-12 text-center">
+      <button type="submit" class="btn btn-outline-primary">Send Message</button>
+    </div>
+
+  </div>
+</form>
 </div>
 
 
@@ -743,35 +642,47 @@
 </body>
 
 <script>
-  window.addEventListener('load', function () {
-    const form = document.getElementById('form');
+ const form = document.getElementById('form');
 
-    form.addEventListener('submit', function (event) {
-      // Check for leading spaces
-      const name = document.getElementById('username');
-      const email = document.getElementById('user-email');
-      const subject = document.getElementById('subject');
-      const message = document.getElementById('message');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault(); // Stop form for validation first
 
-      let hasError = false;
+    // Get input values
+    const name = document.getElementById('username').value.trim();
+    const email = document.getElementById('user-email').value.trim();
+    const subject = document.getElementById('subject').value.trim();
+    const message = document.getElementById('message').value.trim();
 
-      // If any field starts with space, show error and mark invalid
-      [name, email, subject, message].forEach(function (input) {
-        if (input.value.startsWith(' ')) {
-          input.classList.add('is-invalid');
-          hasError = true;
-        }
-      });
+    // RegEx patterns
+    const namePattern = /^[a-zA-Z\s]{3,}$/; // Letters & spaces, min 3 chars
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic email pattern
+    const subjectPattern = /^.{3,}$/; // At least 3 chars
+    const messagePattern = /^.{10,}$/; // At least 10 chars
 
-      // Regular validation check
-      if (!form.checkValidity() || hasError) {
-        event.preventDefault();
-        event.stopPropagation();
-      }
+    let errors = [];
 
-      form.classList.add('was-validated');
-    });
-  });
+    if (!namePattern.test(name)) {
+      errors.push("Name must have at least 3 letters (letters & spaces only).");
+    }
+
+    if (!emailPattern.test(email)) {
+      errors.push("Please enter a valid email address.");
+    }
+
+    if (!subjectPattern.test(subject)) {
+      errors.push("Subject must be at least 3 characters.");
+    }
+
+    if (!messagePattern.test(message)) {
+      errors.push("Message must be at least 10 characters.");
+    }
+
+    if (errors.length > 0) {
+      alert(errors.join("\n"));
+    } else {
+      form.submit(); // If valid, submit the form
+    }
+  });
 </script>
 
 
